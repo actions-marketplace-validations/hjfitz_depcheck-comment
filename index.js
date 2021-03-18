@@ -1,5 +1,6 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
+const depcheck = require('depcheck')
 
 const bullets = line => `* ${line}`
 
