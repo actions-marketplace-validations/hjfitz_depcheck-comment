@@ -61,7 +61,7 @@ async function main() {
 
 	const body = `Dependencies: \n${depsMissing}\n\nDev Deps: \n${devDepsMissing}`
 
-	const kit = new github.Github(token)
+	const kit = new github.GitHub(token)
 	await kit.issues.createComment({
 		...context.repo,
 		issue_number: prNum,
