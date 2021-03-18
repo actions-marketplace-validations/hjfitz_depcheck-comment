@@ -1,0 +1,9 @@
+name: 'Check Node Dependencies and Comment'
+description: 'Check node.js dependencies and comment on a pull request'
+inputs:
+  GITHUB_TOKEN:
+    description: "Github token for the repo - this is automagicallt created by github"
+    required: true
+runs:
+  using: node12
+  main: index.js
