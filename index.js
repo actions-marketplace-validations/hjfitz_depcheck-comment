@@ -2,6 +2,7 @@ const core = require('@actions/core')
 const github = require('@actions/github')
 const depcheck = require('depcheck')
 
+
 const bullets = line => `* ${line}`
 
 const options = {
@@ -61,7 +62,8 @@ async function main() {
 
 	const body = `Dependencies: \n${depsMissing}\n\nDev Deps: \n${devDepsMissing}`
 
-	const kit = new github.GitHub(token)
+	//const kit = new github.GitHub(token)
+    const kit = github.getOctokit(token)
 	await kit.issues.createComment({
 		...context.repo,
 		issue_number: prNum,
